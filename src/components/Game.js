@@ -1,10 +1,21 @@
 import React from "react";
 import ClickImage from "./ClickImage";
-//import tg from "./terminator-genisys.jpg";
-const tg = require('../assets/images/terminator-genisys.jpg');
-const tr = require('../assets/images/total-recall.png');
+import buttons from "./buttons.json";
 
-console.log(tg);
+// require the images for the buttons
+buttons.forEach(button => {
+  button.image = require("../assets/images/" + button.image);
+})
+
+function shuffleArray(array) {
+  console.log(array);
+  for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
+}
 
 // By extending the React.Component class, Counter inherits functionality from it
 class Game extends React.Component {
@@ -12,7 +23,8 @@ class Game extends React.Component {
   state = {
     score: 0,
     highScore: 0,
-    buttons: [
+    buttons,
+    /*buttons: [
       {
         id: 1,
         image: tg
@@ -23,45 +35,9 @@ class Game extends React.Component {
       }, 
       {
         id: 3,
-        image: tg
-      }, 
-      {
-        id: 4,
-        image: tr
-      }, 
-      {
-        id: 5,
-        image: tg
-      }, 
-      {
-        id: 6,
-        image: tr
-      }, 
-      {
-        id: 7,
-        image: tg
-      }, 
-      {
-        id: 8,
-        image: tr
-      }, 
-      {
-        id: 9,
-        image: tg
-      }, 
-      {
-        id: 10,
-        image: tr
-      }, 
-      {
-        id: 11,
-        image: tg
-      }, 
-      {
-        id: 12,
-        image: tr
+        image: kc
       }
-    ],
+    ],*/
     unclickedIds: [] // or perhaps use image URLs?
   };
 
@@ -87,6 +63,21 @@ class Game extends React.Component {
     }
   };
 
+  scrambleButtons = () => {
+    shuffleArray(this.state.buttons);
+    return (
+      this.state.buttons.map(button => (
+      <div className="col text-center">
+        <ClickImage
+          key={button.id} 
+          id={button.id} 
+          image={button.image}
+          handleImageClick={this.handleImageClick}
+        />
+      </div>
+    )));
+  };
+
   // The render method returns the JSX that should be rendered
   render() {
     return (
@@ -94,16 +85,7 @@ class Game extends React.Component {
         <p>Score: {this.state.score}</p>
         <p>High Score: {this.state.highScore}</p>
         <div className="row">
-          {this.state.buttons.map(button => (
-            <div className="col text-center">
-              <ClickImage
-                key={button.id} 
-                id={button.id} 
-                image={button.image}
-                handleImageClick={this.handleImageClick}
-              />
-            </div>
-          ))}
+          {this.scrambleButtons()}
         </div>
       </div>
     );
