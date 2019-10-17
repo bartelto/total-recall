@@ -22,4 +22,4 @@ Try it! [bartelto.github.io/total-recall](http://bartelto.github.io/total-recall
 
 ## The author
 
-This app was written from the ground up by **Todd F. Bartelt** as part of the Full-Stack Web Development program at University of Kansas Professional and Continuing Education. Learn more about Todd at [toddbartelt.com](http://toddbartelt.com).
+This app was bootstrapped using the [Create React App](https://create-react-app.dev/) and designed by **Todd F. Bartelt** as part of the Full-Stack Web Development program at University of Kansas Professional and Continuing Education. Learn more about Todd at [toddbartelt.com](http://toddbartelt.com).
