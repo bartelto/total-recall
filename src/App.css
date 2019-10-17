@@ -3,6 +3,7 @@
   text-align: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  margin: 0;
 }
 
 .jumbotron p {
@@ -10,11 +11,12 @@
 }
 
 h1 {
-  font-family: 'Aldrich', sans-serif;
-  font-size: 100px;
+  font-family: 'Big Shoulders Text', sans-serif;
+  font-size: 150px;
   color: black;
   text-shadow: 3px 3px 0 white;
   letter-spacing: -4px;
+  line-height: 1em;
 }
 
 .scoreboard {
@@ -22,4 +24,18 @@ h1 {
   background-color: rgba(0,0,0,0.2);
   padding: 20px 0;
   margin-bottom: 20px;
+  font-size: 20px;
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 125px;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 100px;
+  }
+}
+

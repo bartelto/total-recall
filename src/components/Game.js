@@ -74,10 +74,13 @@ class Game extends React.Component {
   render() {
     return (
       <div>
-        <div className="container-fluid">
-          <div className="row scoreboard">
-            <div className="col-6"><p>Score: {this.state.score} | High Score: {this.state.highScore}</p></div>
-            <div className="col-6"><p>{this.state.message}</p></div>
+        <div className="container-fluid scoreboard">
+          <div className="container">
+            <div className="row">
+              <div className="col-4 current-score"><p>Current Score: {this.state.score}</p></div>
+              <div className="col-4 instructions"><p>{this.state.message}</p></div>
+              <div className="col-4 high-score"><p>High Score: {this.state.highScore}</p></div>
+            </div>
           </div>
         </div>
         <div className="container">

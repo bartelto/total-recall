@@ -1,6 +1,6 @@
 # Total Recall
 
-*Total Recall* is just a fun memory game... but I couldn't resist tying it in to the Arnold Schwartzenegger film of the same name. Click all of the various Arnies, if you can &mdash; but don't click any of them twice, or the game is over!
+*Total Recall* is just a fun memory game... but I couldn't resist tying it in to the Arnold Schwarzenegger film of the same name. Click all of the various Arnies, if you can &mdash; but don't click any of them twice, or the game is over!
 
 Try it! [bartelto.github.io/total-recall](http://bartelto.github.io/total-recall)
 
@@ -9,11 +9,12 @@ Try it! [bartelto.github.io/total-recall](http://bartelto.github.io/total-recall
 *Total Recall* is a full-stack app created using the Create React App (i.e., React and Node.js).
 
 ### Playing *Total Recall*
-- To begin play, just click Arnie as pictured in one of his many films. Boom! You've got a point!
-- The images will immediately scramble their order. Click a second (different) image. Boom! A second point!
-- Keep clicking images &mdash; as long you haven't clicked the image before, your score will continue to climb.
-- If you _do_ click an image a second time, the game is over and your score will start over at zero.
-- Play again and again! The maximum score is 12.
+- To begin play, **just click Arnie** as pictured in one of his many films. Boom! You've got a point!
+- The images will immediately scramble their order. **Click a second (different) image.** Boom! A second point!
+- **Keep clicking images** &mdash; as long you haven't clicked the image before, your score will continue to climb.
+- If you _do_ click an image a second time, **the game is over** and your score will start over at zero.
+- **Play again and again!** The maximum score is 12.
+- The game will keep track of your **personal high score** for the length of the browser session.
 
 ### Technologies used
 - [Node.js](https://nodejs.org/en/)

@@ -1,31 +1,86 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Play', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url(./assets/images/mars-sunrise.jpg);
   background-position: top center;
 }
 
-.col, .col-6 {
+.current-score {
+  text-align: left;
+}
+
+.instructions {
   text-align: center;
+}
+
+.high-score {
+  text-align: right;
 }
 
 p {
   margin: 0;
+  line-height: 1.2em;
 }
 
 .click-image {
   width: 200px;
   height: 200px;
-  border: 2px white solid;
+  /*border: 2px white solid;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block;
   margin-bottom: 10px;
-  border-radius: 10px;
+  border-radius: 10px;  
+  position: relative;
 }
+
+/* a gradient "border" */
+.click-image::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -2px; /* "width" of the border"\ */
+  border-radius: 12px; /* !importanté */
+  background: #F2C894;
+  /*background: linear-gradient(0turn,#40140A, #F2C894, #40140A); */
+}
+
+
+.click-image:hover::before {
+  /*background: linear-gradient(to left, red, orange);*/
+  animation: spinningGradient 0.5s ease-in-out infinite;
+}
+
+@keyframes spinningGradient {
+  0%{ background: linear-gradient(0turn,#40140A, #F2C894, #40140A); }
+  10%{ background: linear-gradient(0.05turn,#40140A, #F2C894, #40140A); }
+  20%{ background: linear-gradient(0.1turn,#40140A, #F2C894, #40140A); }
+  30%{ background: linear-gradient(0.15turn,#40140A, #F2C894, #40140A); }
+  40%{ background: linear-gradient(0.2turn,#40140A, #F2C894, #40140A); }
+  50%{ background: linear-gradient(0.25turn,#40140A, #F2C894, #40140A); }
+  60%{ background: linear-gradient(0.3turn,#40140A, #F2C894, #40140A); }
+  70%{ background: linear-gradient(0.35turn,#40140A, #F2C894, #40140A); }
+  80%{ background: linear-gradient(0.4turn,#40140A, #F2C894, #40140A); }
+  90%{ background: linear-gradient(0.45turn,#40140A, #F2C894, #40140A); }
+  100%{ background: linear-gradient(0.5turn,#40140A, #F2C894, #40140A); }
+}
+
+@media (max-width: 768px) {
+  .click-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {  
+  .click-image {
+    width: 90px;
+    height: 90px;
+  }
+}
+
