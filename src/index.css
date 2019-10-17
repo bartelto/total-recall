@@ -6,24 +6,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(./assets/images/mars-sunrise.jpg);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.col {
+.col, .col-6 {
   text-align: center;
+}
+
+p {
+  margin: 0;
 }
 
 .click-image {
   width: 200px;
   height: 200px;
   border: 2px white solid;
-  /*background-image: url(./terminator-genisys.jpg);*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
